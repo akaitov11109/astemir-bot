@@ -21,5 +21,10 @@ bot.on('text', (ctx) => {
   ctx.reply('Спасибо! Я получил твою заявку. Скоро свяжусь с тобой.');
 });
 
+import express from 'express';
+const app = express();
+app.get('/', (req, res) => res.send('Бот жив!'));
+app.listen(process.env.PORT || 3000);
+
 bot.launch();
 console.log('🤖 Бот запущен');
